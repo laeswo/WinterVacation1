@@ -8,16 +8,17 @@ using UnityEngine.UI;
 
 public class playerscript : MonoBehaviourPunCallbacks, IPunObservable
 {
-    public Image hpbar;
     public Text nickname;
-    public Text nickname_enemey;
+
     public PhotonView pv;
     public Rigidbody2D rg;
+    public SpriteRenderer rd;
 
-    void Update()
+    void Awake()
     {
-        nickname.text = PhotonNetwork.NickName;
-        nickname.text = pv.Owner.NickName;
+        nickname.text = pv.IsMine? PhotonNetwork.NickName: pv.Owner.NickName;
+
+        rd.color = pv.IsMine ? Color.green : Color.red;
     }
         
 
