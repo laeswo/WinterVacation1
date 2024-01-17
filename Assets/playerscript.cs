@@ -8,16 +8,14 @@ using UnityEngine.UI;
 
 public class playerscript : MonoBehaviourPunCallbacks, IPunObservable
 {
-    public Text nickname;
-
+   
     public PhotonView pv;
     public Rigidbody2D rg;
     public SpriteRenderer rd;
 
     void Awake()
     {
-        nickname.text = pv.IsMine? PhotonNetwork.NickName: pv.Owner.NickName;
-
+       
         rd.color = pv.IsMine ? Color.green : Color.red;
     }
         

@@ -10,11 +10,14 @@ public class networkmanager : MonoBehaviourPunCallbacks
 {
     public GameObject panel;
     public InputField nickname;
+    public Text e;
+    public Text p;
 
  void Awake()
     {
         PhotonNetwork.SendRate = 60;
         PhotonNetwork.SerializationRate = 30;
+       
     }
 
 
@@ -25,10 +28,18 @@ public class networkmanager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.Disconnect();
         }
+  
+         if (PhotonNetwork.CountOfPlayers >= 1)
+        {
+            p.text = PhotonNetwork.PlayerList[0].NickName;
+            e.text = PhotonNetwork.PlayerList[1].NickName;
+        }
     }
     public void spawn()
     {
         PhotonNetwork.Instantiate("player",Vector3.zero, Quaternion.identity);
+
+        
     }
     public void connct() =>   PhotonNetwork.ConnectUsingSettings();
     public override void OnConnectedToMaster()
@@ -40,6 +51,8 @@ public class networkmanager : MonoBehaviourPunCallbacks
     {
         panel.SetActive(false);
         spawn();
+       
+        
     }
     public override void OnDisconnected(DisconnectCause cause)
     {
