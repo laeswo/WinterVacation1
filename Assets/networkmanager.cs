@@ -28,8 +28,7 @@ public class networkmanager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.Disconnect();
         }
-  
-         if (PhotonNetwork.CountOfPlayers >= 1)
+        if (PhotonNetwork.PlayerList[1].NickName.Length > 0)
         {
             p.text = PhotonNetwork.PlayerList[0].NickName;
             e.text = PhotonNetwork.PlayerList[1].NickName;
@@ -54,6 +53,7 @@ public class networkmanager : MonoBehaviourPunCallbacks
        
         
     }
+
     public override void OnDisconnected(DisconnectCause cause)
     {
         panel.SetActive(true);
