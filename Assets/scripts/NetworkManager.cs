@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Photon;
 using Photon.Pun;
 using UnityEngine.UI;
 using Photon.Realtime;
 
-public class networkmanager : MonoBehaviourPunCallbacks
+public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public GameObject panel;
     public InputField nickname;
@@ -28,10 +25,12 @@ public class networkmanager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.Disconnect();
         }
-        if (PhotonNetwork.PlayerList[1].NickName.Length > 0)
-        {
-            p.text = PhotonNetwork.PlayerList[0].NickName;
-            e.text = PhotonNetwork.PlayerList[1].NickName;
+        if (PhotonNetwork.PlayerList.Length > 1) {
+            if (PhotonNetwork.PlayerList[1].NickName.Length > 0)
+            {
+                p.text = PhotonNetwork.PlayerList[0].NickName;
+                e.text = PhotonNetwork.PlayerList[1].NickName;
+            }
         }
     }
     public void spawn()
