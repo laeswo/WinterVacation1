@@ -58,8 +58,6 @@ public class BattleSystem : MonoBehaviour
 
         Collider2D[] colls = Physics2D.OverlapCircleAll(new Vector3(pos.x, pos.x), radius);
 
-        List<PlayerScript> players = new();
-
         foreach (Collider2D col in colls) {
             var ps = col.transform.GetComponent<PlayerScript>();
 
