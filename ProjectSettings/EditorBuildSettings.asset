@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/nozerg.unity
+    path: Assets/Scenes/lobby.unity
     guid: ae07de90dcebff747a0b70430b084481
   m_configObjects: {}
