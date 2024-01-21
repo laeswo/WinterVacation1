@@ -7,6 +7,6 @@ public class Loading_spin : MonoBehaviour
 {
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, -0.4f));
+        transform.Rotate(new Vector3(0, 0, -100f * Time.deltaTime));
     }
 }

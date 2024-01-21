@@ -32,6 +32,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         instance = this;
 
+        DontDestroyOnLoad(gameObject);
+
         if (panel != null) panel.SetActive(false);
     }
 
@@ -69,12 +71,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
             padding++;
         }
-    }
-    public void spawn()
-    {
-        PhotonNetwork.Instantiate("player",Vector3.zero, Quaternion.identity);
-
-        
     }
 
     public override void OnConnectedToMaster()
@@ -138,6 +134,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public override void OnDisconnected(DisconnectCause cause)
     {
-        panel.SetActive(true);
+        if (panel != null) panel.SetActive(true);
     }
 }
