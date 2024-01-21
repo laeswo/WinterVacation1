@@ -28,7 +28,6 @@ public class LobbyManager : MonoBehaviour
     {
         if (PhotonNetwork.PlayerList.Length > 0 && PhotonNetwork.InRoom) {
             player1.text = PhotonNetwork.PlayerList[0].NickName;
-            Debug.Log(PhotonNetwork.PlayerList.Length);
             if (PhotonNetwork.PlayerList.Length > 1) {
                 player2.text = PhotonNetwork.PlayerList[1].NickName;
 

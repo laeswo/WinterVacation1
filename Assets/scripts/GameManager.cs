@@ -16,6 +16,13 @@ public class GameManager : MonoBehaviour
         isWaiting = true;
         loading.gameObject.SetActive(true);
         cause.text = "상대 플레이어의 로딩이 끝날 때까지 대기합니다...";
+
+        PhotonNetwork.LocalPlayer.SetCustomProperties(new Hashtable(){
+            {
+                "state",
+                "waiting"
+            }
+        });
     }
 
     void Update()
@@ -25,11 +32,27 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(Disconnected());
             } else {
                 Hashtable ht = PhotonNetwork.PlayerListOthers[0].CustomProperties;
-                // if (ht["state"] != "loading") {
+                string state = ht["state"] as string;
 
-                // }
+                if (state != "loading") {
+                    isWaiting = false;
+
+                    loading.gameObject.SetActive(false);
+                    cause.text = "";
+                    AfterLoading();
+                }
             }
         }
+    }
+
+    public void spawn()
+    {
+        PhotonNetwork.Instantiate("player",Vector3.zero, Quaternion.identity);
+    }
+
+    void AfterLoading() {
+        spawn();
+        spawn();
     }
 
     IEnumerator Disconnected() {
