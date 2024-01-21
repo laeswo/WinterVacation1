@@ -53,9 +53,10 @@ public class GameManager : MonoBehaviour
     public void spawn()
     {
         if (PhotonNetwork.LocalPlayer.GetHashCode().Equals(PhotonNetwork.PlayerList[0].GetHashCode())) {
-            PhotonNetwork.Instantiate("player",new Vector3(-8.3f, -2f, 0), Quaternion.identity);
+            PhotonNetwork.Instantiate("player_blue",new Vector3(-8.3f, 0f, 0), Quaternion.identity);
+
         } else {
-            PhotonNetwork.Instantiate("player",new Vector3(8.3f, -2f, 0), Quaternion.identity);
+            PhotonNetwork.Instantiate("player_red",new Vector3(8.3f, 0f, 0), Quaternion.identity);
         }
     }
 

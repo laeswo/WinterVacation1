@@ -16,23 +16,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     void Awake()
     {
-        if (instance) {
-            instance.panel = this.panel;
-            instance.nickname = this.nickname;
-            instance.onRoom = this.onRoom;
-            instance.loading = this.loading;
-
-            DestroyImmediate(this.gameObject);
-
-            return;
-        }
 
         PhotonNetwork.SendRate = 60;
         PhotonNetwork.SerializationRate = 30;
 
         instance = this;
-
-        DontDestroyOnLoad(gameObject);
 
         if (panel != null) panel.SetActive(false);
     }
