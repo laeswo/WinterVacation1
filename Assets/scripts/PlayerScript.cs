@@ -1,19 +1,27 @@
 using System;
+using System.Collections.Generic;
 using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
-   
+   public static List<PlayerScript> players;
     public PhotonView pv;
     public Rigidbody2D rg;
     public SpriteRenderer rd;
     public float moveSpeed;
     public string team;
     Vector3 curPos;
+    public int MaxHealth = 100;
+    public int health;
+    public bool canHurt = true;
     void Awake()
     {
         //rd.color = pv.IsMine ? Color.green : Color.red;
+        players.Add(this);
+
+        health = MaxHealth;
     }
 
     void Update () 
@@ -32,6 +40,21 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         }
         else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
+    }
+
+    public bool Damage(int damage) {
+        if (canHurt) {
+            health -= damage;
+
+            if (health <= 0) {
+                Debug.Log(team + " is Death");
+                PhotonNetwork.Destroy(this.gameObject);
+            }
+
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void Jump() {
