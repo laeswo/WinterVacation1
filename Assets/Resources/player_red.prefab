@@ -173,6 +173,8 @@ MonoBehaviour:
   MaxHealth: 100
   health: 0
   canHurt: 1
+  hand: 0
+  idle: 1
 --- !u!61 &5327161398695391678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -236,10 +238,10 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Idle
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Hand_s
   m_SynchronizeLayers:
   - SynchronizeType: 0

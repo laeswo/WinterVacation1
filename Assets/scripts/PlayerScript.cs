@@ -17,7 +17,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     Vector3 curPos;
     public int MaxHealth = 100; 
     public int health;
-    public bool canHurt = true; 
+    public bool canHurt = true;
+    public bool hand = false;
+    public bool idle = true;
+
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -44,17 +47,24 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
             if (Input.GetKeyDown(KeyCode.E))
             {
+                idle = false ;
+                hand = true;
                 PhotonNetwork.Instantiate("attack_colider", transform.position + new Vector3(rd.flipX?3f:-3f,-0.2f),Quaternion.identity); 
+
                 animator.SetBool("Idle", false);
+
                 animator.SetBool("Hand_s", true);
 
-                pv.RPC("AttackRPC", RpcTarget.All );    
+        
             }
 
             if (stateInfo.IsName("Hand_s") && stateInfo.normalizedTime >= 1.0f)
             {
+                idle = true;
+                hand = false;
                 animator.SetBool("Idle", true);
                 animator.SetBool("Hand_s", false);
+         
             }
 
                 
@@ -82,11 +92,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     public void Jump() {
         rg.velocity = new Vector2(rg.velocity.x, 10);
     }
-    [PunRPC]
-        void AttackRPC()
-    {
-
-    }
+    
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         
@@ -94,12 +100,15 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 stream.SendNext(transform.position);
                 stream.SendNext(rd.flipX);
+                stream.SendNext(idle);
+                stream.SendNext(hand);
             }
             else
             {
                 curPos = (Vector3)stream.ReceiveNext();
                 rd.flipX = (bool)stream.ReceiveNext();
-            
+                idle = (bool)stream.ReceiveNext();
+            hand = (bool)stream.ReceiveNext();
             }
         
     }
