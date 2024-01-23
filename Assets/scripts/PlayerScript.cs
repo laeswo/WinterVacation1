@@ -15,9 +15,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     public float moveSpeed;
     public string team;
     Vector3 curPos;
-    public int MaxHealth = 100;
+    public int MaxHealth = 100; 
     public int health;
-    public bool canHurt = true;
+    public bool canHurt = true; 
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -44,9 +44,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
             if (Input.GetKeyDown(KeyCode.E))
             {
+                PhotonNetwork.Instantiate("attack_colider", transform.position + new Vector3(rd.flipX?3f:-3f,-0.2f),Quaternion.identity); 
                 animator.SetBool("Idle", false);
                 animator.SetBool("Hand_s", true);
-                pv.RPC("AttackRPC", RpcTarget.All );
+
+                pv.RPC("AttackRPC", RpcTarget.All );    
             }
 
             if (stateInfo.IsName("Hand_s") && stateInfo.normalizedTime >= 1.0f)

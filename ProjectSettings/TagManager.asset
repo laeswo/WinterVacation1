@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - player
+  - ground
   layers:
   - Default
   - TransparentFX
