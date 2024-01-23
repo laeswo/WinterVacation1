@@ -46,6 +46,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 animator.SetBool("Idle", false);
                 animator.SetBool("Hand_s", true);
+                pv.RPC("AttackRPC", RpcTarget.All );
             }
 
             if (stateInfo.IsName("Hand_s") && stateInfo.normalizedTime >= 1.0f)
@@ -54,7 +55,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
                 animator.SetBool("Hand_s", false);
             }
 
-
+                
 
         }
         else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
@@ -79,7 +80,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     public void Jump() {
         rg.velocity = new Vector2(rg.velocity.x, 10);
     }
-    
+    [PunRPC]
+        void AttackRPC()
+    {
+
+    }
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         

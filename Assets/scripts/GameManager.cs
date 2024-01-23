@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         loading.gameObject.SetActive(true);
         cause.text = "상대 플레이어의 로딩이 끝날 때까지 대기합니다...";
 
-        PlayerScript.players.Clear();
+       //        PlayerScript.players.Clear();
 
         bool ok = PhotonNetwork.LocalPlayer.SetCustomProperties(new Hashtable(){
             {
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
             }
         });
 
-        Debug.Log(PhotonNetwork.LocalPlayer.CustomProperties["state"]);
+        Debug.Log(PhotonNetwork.LocalPlayer.CustomProperties["state"]);         
     }
 
     void Update()
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void AfterLoading() {
+    void AfterLoading() {   
         spawn();
     }
 

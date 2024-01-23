@@ -15,7 +15,7 @@ public class LobbyManager : MonoBehaviour
     public Text player2;
     public Image player2_background;
     bool player2_connected = false;
-
+   
     float count = 0;
     void Start()
     {
