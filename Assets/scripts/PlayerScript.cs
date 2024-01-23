@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
+    private Animator animator;
    public static List<PlayerScript> players;
     public PhotonView pv;
     public Rigidbody2D rg;
@@ -18,8 +20,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     public bool canHurt = true;
     void Awake()
     {
+        animator = GetComponent<Animator>();
         //rd.color = pv.IsMine ? Color.green : Color.red;
-        players.Add(this);
+        //players.Add(this);
 
         health = MaxHealth;
     }
@@ -37,6 +40,22 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             if (Input.GetKeyDown(KeyCode.Space)) {
                 Jump();
             }
+
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                animator.SetBool("Idle", false);
+                animator.SetBool("Hand_s", true);
+            }
+
+            if (stateInfo.IsName("Hand_s") && stateInfo.normalizedTime >= 1.0f)
+            {
+                animator.SetBool("Idle", true);
+                animator.SetBool("Hand_s", false);
+            }
+
+
+
         }
         else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);

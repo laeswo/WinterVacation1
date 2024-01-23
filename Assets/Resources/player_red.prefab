@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5338454543924833558}
   - component: {fileID: 5338454543924833553}
   - component: {fileID: 5327161398695391678}
+  - component: {fileID: -3758590938411865150}
   m_Layer: 0
   m_Name: player_red
   m_TagString: Untagged
@@ -167,6 +168,9 @@ MonoBehaviour:
   rd: {fileID: 5338454543924833555}
   moveSpeed: 6
   team: 
+  MaxHealth: 100
+  health: 0
+  canHurt: 1
 --- !u!61 &5327161398695391678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -193,3 +197,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.3071194, y: 5.6994615}
   m_EdgeRadius: 0
+--- !u!111 &-3758590938411865150
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338454543924833554}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

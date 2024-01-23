@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5338454543924833558}
   - component: {fileID: 5338454543924833553}
   - component: {fileID: 5327161398695391678}
+  - component: {fileID: 3686971379025943430}
   m_Layer: 0
   m_Name: player_blue
   m_TagString: Untagged
@@ -166,8 +167,10 @@ MonoBehaviour:
   rg: {fileID: 5338454543924833557}
   rd: {fileID: 5338454543924833555}
   moveSpeed: 6
-  red: {fileID: 21300000, guid: 52df492a82bcf1749be00ddde29cc7b2, type: 3}
-  blue: {fileID: 21300000, guid: 793f9754a272f74488c8874a78371e99, type: 3}
+  team: 
+  MaxHealth: 100
+  health: 0
+  canHurt: 1
 --- !u!61 &5327161398695391678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -194,3 +197,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.3071194, y: 5.6994615}
   m_EdgeRadius: 0
+--- !u!95 &3686971379025943430
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338454543924833554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2a89627f73e4e6d4db5ab807633d3c62, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
