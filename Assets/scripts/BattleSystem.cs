@@ -24,16 +24,16 @@ public class BattleSystem : MonoBehaviour
 
     public static PlayerScript GetParticularPlayer(Team team) {
         if (team == Team.Red) {
-            return PlayerScript.players.Find(v => v.team == "red");
+            return GameManager.instance.players.Find(v => v.team == "red");
         } else if (team == Team.Blue) {
-            return PlayerScript.players.Find(v => v.team == "blue");
+            return GameManager.instance.players.Find(v => v.team == "blue");
         }
 
         return null;
     }
 
     public static List<PlayerScript> GetAllPlayers() {
-        return PlayerScript.players;
+        return GameManager.instance.players;
     }
 
     public static List<PlayerScript> GetPlayersOfCenter(Vector2 centerPos, float radius) {
@@ -62,7 +62,7 @@ public class BattleSystem : MonoBehaviour
             var ps = col.transform.GetComponent<PlayerScript>();
 
             if (ps != null) {
-                return ps;
+                if (ps.team != origin.team) return ps;
             }
         }
 
