@@ -15,9 +15,11 @@ GameObject:
   - component: {fileID: 5338454543924833558}
   - component: {fileID: 5338454543924833553}
   - component: {fileID: 5327161398695391678}
+  - component: {fileID: -7231460186717935847}
+  - component: {fileID: 1537150295233548450}
   m_Layer: 0
   m_Name: player_red
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +133,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 5338454543924833558}
   - {fileID: 5338454543924833553}
+  - {fileID: 1537150295233548450}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -170,6 +173,8 @@ MonoBehaviour:
   MaxHealth: 100
   health: 0
   canHurt: 1
+  hand: 0
+  idle: 1
 --- !u!61 &5327161398695391678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -196,3 +201,48 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.3071194, y: 5.6994615}
   m_EdgeRadius: 0
+--- !u!95 &-7231460186717935847
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338454543924833554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 17a1a2b014b3df64bab84f32f4ea2f51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1537150295233548450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338454543924833554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 1
+    Name: Idle
+  - Type: 4
+    SynchronizeType: 1
+    Name: Hand_s
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
