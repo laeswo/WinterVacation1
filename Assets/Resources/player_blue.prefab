@@ -166,8 +166,10 @@ MonoBehaviour:
   rg: {fileID: 5338454543924833557}
   rd: {fileID: 5338454543924833555}
   moveSpeed: 6
-  red: {fileID: 21300000, guid: 52df492a82bcf1749be00ddde29cc7b2, type: 3}
-  blue: {fileID: 21300000, guid: 793f9754a272f74488c8874a78371e99, type: 3}
+  team: 
+  MaxHealth: 100
+  health: 0
+  canHurt: 1
 --- !u!61 &5327161398695391678
 BoxCollider2D:
   m_ObjectHideFlags: 0

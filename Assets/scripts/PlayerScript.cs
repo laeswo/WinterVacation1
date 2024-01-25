@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
-   public static List<PlayerScript> players;
+   public static List<PlayerScript> players = new();
     public PhotonView pv;
     public Rigidbody2D rg;
     public SpriteRenderer rd;

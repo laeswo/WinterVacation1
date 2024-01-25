@@ -167,6 +167,9 @@ MonoBehaviour:
   rd: {fileID: 5338454543924833555}
   moveSpeed: 6
   team: 
+  MaxHealth: 100
+  health: 0
+  canHurt: 1
 --- !u!61 &5327161398695391678
 BoxCollider2D:
   m_ObjectHideFlags: 0
