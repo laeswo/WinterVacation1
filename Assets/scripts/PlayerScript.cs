@@ -103,10 +103,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             }
         }
 
-        if (transform.localPosition.x < -6f) {
-            transform.localPosition = new Vector2(-6f, transform.localPosition.y);
-        } else if (transform.localPosition.x > 6f) {
-            transform.localPosition = new Vector2(6f, transform.localPosition.y);
+        if (transform.localPosition.x < -5.5f) {
+            transform.localPosition = new Vector2(-5.5f, transform.localPosition.y);
+        } else if (transform.localPosition.x > 5.5f) {
+            transform.localPosition = new Vector2(5.5f, transform.localPosition.y);
         }
     }
 
