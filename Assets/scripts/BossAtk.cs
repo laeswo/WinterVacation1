@@ -28,7 +28,7 @@ public class BossAtk : MonoBehaviourPunCallbacks, IPunObservable
         var pls = BattleSystem.GetPlayersOfCenter(transform.position, 1.5f);
 
         foreach (var p in pls) {
-            p.Damage(30);
+            if (p.transform.position.y < -0.7) p.Damage(30);
         }
 
         Destroy(gameObject);

@@ -103,26 +103,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             }
         }
 
-        var ht = pv.Owner.CustomProperties;
-        var damage = ht["damage"] as int?;
-
-        if (damage.HasValue && damage.Value > 0 && pv.IsMine) {
-            damageSelf(damage.Value);
-
-            Debug.Log(damage);
-
-            pv.Owner.SetCustomProperties(new Hashtable(){
-                {
-                    "damage",
-                    -1
-                }
-            });
-        }
-
-        if (transform.localPosition.x < -7.7f) {
-            transform.localPosition = new Vector2(-7.7f, transform.localPosition.y);
-        } else if (transform.localPosition.x > 7.7f) {
-            transform.localPosition = new Vector2(7.7f, transform.localPosition.y);
+        if (transform.localPosition.x < -6f) {
+            transform.localPosition = new Vector2(-6f, transform.localPosition.y);
+        } else if (transform.localPosition.x > 6f) {
+            transform.localPosition = new Vector2(6f, transform.localPosition.y);
         }
     }
 
@@ -184,14 +168,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         stopAtk = false;
     }
 
-    void damageSelf(int damage_) {
-        health -= damage_;
-
-        if (health <= 0) {
-            Debug.Log(team + " is Death");
-        }
-    }
-
     public bool Damage(int damage_) {
         if (canHurt) {
             object[] param = {
@@ -227,6 +203,14 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     [PunRPC]
     void OnDamaged(int damage){
         health -= damage;
+
+        if (pv.IsMine) {
+            if (health > 0) {
+                GameManager.instance.hurt.Play();
+            } else {
+                GameManager.instance.death.Play();
+            }
+        }
     }
 
     public void Jump() {
@@ -249,6 +233,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
                 stream.SendNext(sendAction);
                 stream.SendNext(team);
                 stream.SendNext(isMoving);
+                stream.SendNext(noImage);
 
                 if (sendAction) {
                     action = "";
@@ -264,6 +249,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
                 var callAction = (bool)stream.ReceiveNext();
                 team = (string)stream.ReceiveNext();
                 isMoving = (bool)stream.ReceiveNext();
+                noImage = (float)stream.ReceiveNext();
 
                 if (callAction) {
                     if (action == "hand_skill") {

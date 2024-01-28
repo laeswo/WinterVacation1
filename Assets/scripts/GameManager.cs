@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
     public float round;
     public static GameManager instance;
     public bool doAction = false;
+    public AudioSource hurt;
+    public AudioSource death;
+    public AudioSource bgm;
     void Start()
     {
         instance = this;
@@ -214,6 +217,8 @@ public class GameManager : MonoBehaviour
         }
 
         cause.text = "START!";
+
+        bgm.Play();
 
         yield return new WaitForSeconds(0.6f);
 
