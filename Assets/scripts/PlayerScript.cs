@@ -204,12 +204,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     void OnDamaged(int damage){
         health -= damage;
 
-        if (pv.IsMine) {
-            if (health > 0) {
-                GameManager.instance.hurt.Play();
-            } else {
-                GameManager.instance.death.Play();
-            }
+        if (health > 0) {
+            GameManager.instance.hurt.Play();
+        } else {
+            GameManager.instance.death.Play();
         }
     }
 
