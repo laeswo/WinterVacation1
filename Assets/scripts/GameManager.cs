@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Text cause;
     public Image loading;
     public Image cover;
+    public Sprite noImage;
     public Slider blue_hp;
     public Text blue_name;
     public Text blue_score;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     public float timer;
     public float round;
     public static GameManager instance;
+    public bool doAction = false;
     void Start()
     {
         instance = this;
@@ -38,24 +40,19 @@ public class GameManager : MonoBehaviour
         loading.gameObject.SetActive(true);
         cause.text = "상대 플레이어의 로딩이 끝날 때까지 대기합니다...";
 
-        if (PhotonNetwork.IsMasterClient) PhotonNetwork.CurrentRoom.SetCustomProperties(new Hashtable(){
+        if (PhotonNetwork.IsMasterClient) {
+            PhotonNetwork.CurrentRoom.SetCustomProperties(new Hashtable(){
             {
                 "state",
                 "waiting"
             }
-        });
+            });
+        }
 
         PhotonNetwork.LocalPlayer.SetCustomProperties(new Hashtable(){
             {
                 "state",
                 "waiting"
-            }
-        });
-
-        PhotonNetwork.LocalPlayer.SetCustomProperties(new Hashtable(){
-            {
-                "score",
-                0
             }
         });
     }
@@ -81,24 +78,25 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        int? blueScore = PhotonNetwork.PlayerList[0].CustomProperties["score"] as int?;
-        if (blueScore != null) {
-            blue_score.text = blueScore.ToString();
-        }
         blue_name.text = PhotonNetwork.PlayerList[0].NickName;
 
         var blue = BattleSystem.GetParticularPlayer(Team.Blue);
-        if (blue != null) blue_hp.value = blue.health * 100 / blue.MaxHealth;
-
-
-        int? redScore = PhotonNetwork.PlayerList[1].CustomProperties["score"] as int?;
-        if (redScore != null) {
-            red_score.text = redScore.ToString();
+        if (blue != null) {
+            if (blue.health < 0) blue.health = 0;
+            blue_hp.value = blue.health * 100 / blue.MaxHealth;
+            blue_score.text = blue.score.ToString();
         }
+
+
+
         red_name.text = PhotonNetwork.PlayerList[1].NickName;
 
         var red = BattleSystem.GetParticularPlayer(Team.Red);
-        if (red != null) red_hp.value = red.health * 100 / red.MaxHealth;
+        if (red != null) {
+            if (red.health < 0) red.health = 0;
+            red_hp.value = red.health * 100 / red.MaxHealth;
+            red_score.text = red.score.ToString();
+        }
 
         Hashtable htr = PhotonNetwork.CurrentRoom.CustomProperties;
         string stateR = htr["state"] as string;
@@ -113,6 +111,79 @@ public class GameManager : MonoBehaviour
         if (isStarted) {
             timer -= Time.deltaTime;
         }
+
+        if (doAction) {
+            if (timer <= 0 || red.health <= 0 || blue.health <= 0) {
+                if (timer <= 0) cause.text = "타임 오버!";
+                else cause.text = "라운드 종료!";
+                StartCoroutine(NextRound(red, blue));
+            }
+        }
+    }
+
+    IEnumerator NextRound(PlayerScript red, PlayerScript blue) {
+        doAction = false;
+        if (red.score >= 3 && blue.score >= 3) {
+            cause.text = "무승부!";
+
+            yield return new WaitForSeconds(1);
+
+            StartCoroutine(Disconnected());
+
+            yield break;
+        }
+        else if (red.score >= 3) {
+            cause.text = "레드 승리!";
+
+            yield return new WaitForSeconds(1);
+
+            StartCoroutine(Disconnected());
+
+            yield break;
+        }
+        else if (blue.score >= 3) {
+            cause.text = "블루 승리!";
+
+            yield return new WaitForSeconds(1);
+
+            StartCoroutine(Disconnected());
+
+            yield break;
+        }
+        yield return new WaitForSeconds(1);
+        if (red.health > blue.health) {
+            cause.text = "레드팀이 1점을 획득합니다!";
+            red.score++;
+        } else if (blue.health > red.health) {
+            cause.text = "블루팀이 1점을 획득합니다!";
+            blue.score++;
+        } else {
+            cause.text = "무승부! 둘 다 1점을 획득합니다!";
+            red.score++;
+            blue.score++;
+        }
+
+        yield return new WaitForSeconds(1.2f);
+
+        round++;
+        cause.text = "라운드 " + round;
+
+        blue.transform.position = new Vector3(-8.3f, 0f, 0);
+        red.transform.position = new Vector3(8.3f, 0f, 0);
+
+        timer = 60;
+
+        blue.health = blue.MaxHealth;
+        red.health = red.MaxHealth;
+
+        yield return new WaitForSeconds(1f);
+
+        cause.text = "START!";
+
+        doAction = true;
+
+        yield return new WaitForSeconds(0.7f);
+        cause.text = "";
     }
 
     public void spawn()
@@ -147,6 +218,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
 
         cause.text = "";
+
+        doAction = true;
 
         if (PhotonNetwork.IsMasterClient) PhotonNetwork.CurrentRoom.SetCustomProperties(new Hashtable(){
             {

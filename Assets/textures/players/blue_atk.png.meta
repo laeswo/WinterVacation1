@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7635f87d01631f4b8e69a17164eec10
+guid: a95f6f314b919ac43a9e2bcc94dd6041
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: atk_0
+      name: blue_atk_0
       rect:
         serializedVersion: 2
-        x: 5571
+        x: 0
         y: 0
-        width: 1857.1428
-        height: 665
+        width: 402
+        height: 586
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0471c62b6701d084d855865108e80604
-      internalID: 1150084503
+      spriteID: 9bc91f33690afcb4a9674d1088d53b7f
+      internalID: 78359137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atk_1
+      name: blue_atk_1
       rect:
         serializedVersion: 2
-        x: 7428
+        x: 402
         y: 0
-        width: 1857.1428
-        height: 665
+        width: 402
+        height: 586
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e7a975fb2d39da4f89b8314d5712b07
-      internalID: 814478282
+      spriteID: 375ebb78a66bb6446bc53378eeb87133
+      internalID: 1679852557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atk_2
+      name: blue_atk_2
       rect:
         serializedVersion: 2
-        x: 9285
+        x: 804
         y: 0
-        width: 1857.1428
-        height: 665
+        width: 402
+        height: 586
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5ce88a4699f92f4f9983969c511ef62
-      internalID: -1494671531
+      spriteID: f5c424c8da5997347b7ea66818fe2e8e
+      internalID: -144226788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atk_3
+      name: blue_atk_3
       rect:
         serializedVersion: 2
-        x: 11142
+        x: 1206
         y: 0
-        width: 1857.1428
-        height: 665
+        width: 402
+        height: 586
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,8 +218,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1bd6b9e9f603af4bbe1a6c813ead482
-      internalID: -690936907
+      spriteID: c678b007d73f6cd4fa0f638aad5b59c5
+      internalID: -1408065696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_atk_4
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 0
+        width: 402
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1ad9139f4dcaa24782e917e7e1e8bce
+      internalID: -639147636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_atk_5
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 0
+        width: 402
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a118842b5ed3f884ebdb45cfb7a45e5a
+      internalID: 1002541322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_atk_6
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 0
+        width: 402
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3cba5e41a18d2c429425f49a9b05cea
+      internalID: 783950587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_atk_7
+      rect:
+        serializedVersion: 2
+        x: 2814
+        y: 0
+        width: 402
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02244f3ea3f5c6a44bfb0c0c9f10b75f
+      internalID: -521877801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_atk_8
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 0
+        width: 402
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a899710c6aa504aac77fd04015c1e5
+      internalID: -308137431
       vertices: []
       indices: 
       edges: []
@@ -235,10 +340,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      atk_0: 1150084503
-      atk_1: 814478282
-      atk_2: -1494671531
-      atk_3: -690936907
+      blue_atk_0: 78359137
+      blue_atk_1: 1679852557
+      blue_atk_2: -144226788
+      blue_atk_3: -1408065696
+      blue_atk_4: -639147636
+      blue_atk_5: 1002541322
+      blue_atk_6: 783950587
+      blue_atk_7: -521877801
+      blue_atk_8: -308137431
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

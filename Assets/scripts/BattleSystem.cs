@@ -56,6 +56,8 @@ public class BattleSystem : MonoBehaviour
             pos = centerPos.Value;
         }
 
+        Debug.Log(pos);
+
         Collider2D[] colls = Physics2D.OverlapCircleAll(new Vector3(pos.x, pos.x), radius);
 
         foreach (Collider2D col in colls) {

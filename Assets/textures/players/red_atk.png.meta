@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7635f87d01631f4b8e69a17164eec10
+guid: 113b824e784177a44a0d6806f25d9cf5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: atk_0
+      name: red_atk_0
       rect:
         serializedVersion: 2
-        x: 5571
+        x: 0
         y: 0
-        width: 1857.1428
-        height: 665
+        width: 402
+        height: 586
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0471c62b6701d084d855865108e80604
-      internalID: 1150084503
+      spriteID: f24968488fe93d442b6b9c63ac0acc71
+      internalID: 1724738243
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atk_1
+      name: red_atk_1
       rect:
         serializedVersion: 2
-        x: 7428
+        x: 402
         y: 0
-        width: 1857.1428
-        height: 665
+        width: 402
+        height: 586
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e7a975fb2d39da4f89b8314d5712b07
-      internalID: 814478282
+      spriteID: 4bc3e3dd7d5ad2244b5105e8d640e594
+      internalID: 14767338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atk_2
+      name: red_atk_2
       rect:
         serializedVersion: 2
-        x: 9285
+        x: 804
         y: 0
-        width: 1857.1428
-        height: 665
+        width: 402
+        height: 586
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5ce88a4699f92f4f9983969c511ef62
-      internalID: -1494671531
+      spriteID: 3eb551a989bf18f47ae36ea16e53a3b2
+      internalID: -1725111998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atk_3
+      name: red_atk_3
       rect:
         serializedVersion: 2
-        x: 11142
+        x: 1206
         y: 0
-        width: 1857.1428
-        height: 665
+        width: 402
+        height: 586
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,8 +218,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1bd6b9e9f603af4bbe1a6c813ead482
-      internalID: -690936907
+      spriteID: 905a24d22a24a34489e693790d38c93c
+      internalID: -1645253241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red_atk_4
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 0
+        width: 402
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71971ed4b35c1244d869e8d852adf2df
+      internalID: -217741668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red_atk_5
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 0
+        width: 402
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc5547f9aef322b46b85ade81fb851cb
+      internalID: -910748391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red_atk_6
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 0
+        width: 402
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0be0d6d745c8c64c98b0f284d2f954f
+      internalID: 1743420758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red_atk_7
+      rect:
+        serializedVersion: 2
+        x: 2814
+        y: 0
+        width: 402
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab86a5adfc185f4bbdd3e26e3981ca0
+      internalID: -1754953994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red_atk_8
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 0
+        width: 402
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb6b529e49dd6948855568b94b2547c
+      internalID: 554867954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red_atk_9
+      rect:
+        serializedVersion: 2
+        x: 3618
+        y: 0
+        width: 402
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ae63bf0f9aa7c45ad8ea6a96101f98
+      internalID: -1740528597
       vertices: []
       indices: 
       edges: []
@@ -235,10 +361,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      atk_0: 1150084503
-      atk_1: 814478282
-      atk_2: -1494671531
-      atk_3: -690936907
+      red_atk_0: 1724738243
+      red_atk_1: 14767338
+      red_atk_2: -1725111998
+      red_atk_3: -1645253241
+      red_atk_4: -217741668
+      red_atk_5: -910748391
+      red_atk_6: 1743420758
+      red_atk_7: -1754953994
+      red_atk_8: 554867954
+      red_atk_9: -1740528597
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7635f87d01631f4b8e69a17164eec10
+guid: 5abd79cec1e7b744b96edd200abbcb26
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: atk_0
+      name: no_image_0
       rect:
         serializedVersion: 2
-        x: 5571
+        x: 0
         y: 0
-        width: 1857.1428
-        height: 665
+        width: 3000
+        height: 3000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0471c62b6701d084d855865108e80604
-      internalID: 1150084503
+      spriteID: 152e81c6edea0f84fb0eee1b7b5dcbd3
+      internalID: -1098157617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: atk_1
+      name: no_image_1
       rect:
         serializedVersion: 2
-        x: 7428
+        x: 3000
         y: 0
-        width: 1857.1428
-        height: 665
+        width: 3000
+        height: 3000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,50 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e7a975fb2d39da4f89b8314d5712b07
-      internalID: 814478282
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atk_2
-      rect:
-        serializedVersion: 2
-        x: 9285
-        y: 0
-        width: 1857.1428
-        height: 665
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5ce88a4699f92f4f9983969c511ef62
-      internalID: -1494671531
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: atk_3
-      rect:
-        serializedVersion: 2
-        x: 11142
-        y: 0
-        width: 1857.1428
-        height: 665
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1bd6b9e9f603af4bbe1a6c813ead482
-      internalID: -690936907
+      spriteID: abdf5709c3b914d4396cab74ab831612
+      internalID: -1225951205
       vertices: []
       indices: 
       edges: []
@@ -235,10 +193,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      atk_0: 1150084503
-      atk_1: 814478282
-      atk_2: -1494671531
-      atk_3: -690936907
+      no_image_0: -1098157617
+      no_image_1: -1225951205
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
